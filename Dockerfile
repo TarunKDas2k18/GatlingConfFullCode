@@ -18,7 +18,7 @@ RUN mkdir -p gatling
 
 RUN apk add git
 
-RUN git clone https://github.com/TarunKDas2k18/GatlingK8s.git /tmp/archivetd
+RUN git clone https://github.com/TarunKDas2k18/gatlingconf.git /tmp/archivetd
 
 RUN ls /tmp/archivetd
 
@@ -31,8 +31,8 @@ RUN apk add --update wget bash libc6-compat && \
   unzip /tmp/downloads/gatling-$GATLING_VERSION.zip && \
   mv /tmp/archive/gatling-charts-highcharts-bundle-$GATLING_VERSION/* /opt/gatling/ && \
   ls /tmp/archivetd &&\
-  cp /tmp/archivetd/*.* /opt/gatling/user-files/simulations/ &&\
-  find /opt/gatling/user-files/simulations/ &&\
+  cp /tmp/archivetd/*.* /opt/gatling/conf/ &&\
+  find /opt/gatling/conf/ &&\
   rm -rf /tmp/*
 
 # change context to gatling directory
